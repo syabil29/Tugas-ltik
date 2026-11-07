@@ -1,15 +1,28 @@
 import numpy as np
 
-# Data dummy nilai ujian 30 siswa
-np.random.seed(42)  # agar hasil acak selalu sama
-nilai_ujian = np.random.randint(50, 101, size=30)
+# Data dummy nilai ujian 20 siswa
+np.random.seed(7)  # supaya hasil acak selalu sama
+nilai = np.random.randint(60, 101, size=20)
 
-print("Nilai asli          :", nilai_ujian)
+print("Nilai asli        :", nilai)
+
+# Mengurutkan dari yang terkecil hingga terbesar
+nilai_naik = np.sort(nilai)
+print("Nilai naik (asc)  :", nilai_naik)
 
 # Mengurutkan dari yang terbesar hingga terkecil
-nilai_terurut = np.sort(nilai_ujian)[::-1]
-print("Nilai terurut (desc):", nilai_terurut)
+nilai_turun = np.sort(nilai)[::-1]
+print("Nilai turun (desc):", nilai_turun)
 
-# Menampilkan 5 nilai terbesar
-lima_terbesar = nilai_terurut[:5]
-print("5 nilai terbesar    :", lima_terbesar)
+# Menampilkan 3 nilai terbesar dan 3 nilai terkecil
+tiga_terbesar = nilai_turun[:3]
+tiga_terkecil = nilai_naik[:3]
+print("3 nilai terbesar  :", tiga_terbesar)
+print("3 nilai terkecil  :", tiga_terkecil)
+
+# Perbandingan
+print("\n--- Perbandingan ---")
+print("Nilai tertinggi   :", np.max(nilai))
+print("Nilai terendah    :", np.min(nilai))
+print("Rata-rata         :", np.mean(nilai))
+print("Selisih tertinggi dan terendah:", np.max(nilai) - np.min(nilai))
